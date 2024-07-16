@@ -1,7 +1,6 @@
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 
 
 var builder = WebApplication.CreateBuilder(args);

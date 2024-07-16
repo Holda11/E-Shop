@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
-using AutoMapper.Extensions.Microsoft.DependencyInjection;
+
+using AutoMapper;
+using API.Dtos;
 
 namespace API.Helpers
 {
