@@ -20,22 +20,19 @@ namespace Infrastructure.Services
         public TokenService(IConfiguration config)
         {
             _config = config;
-            var keyBytes = Encoding.UTF8.GetBytes(_config["Token:Key"]);
-            using (var hash = SHA512.Create())
-            {
-                _key = new SymmetricSecurityKey(hash.ComputeHash(keyBytes));
-            }
+            var hash = SHA512.Create();
+            _key = new SymmetricSecurityKey(hash.ComputeHash(Encoding.UTF8.GetBytes(_config["Token:Key"])));
         }
 
         public string CreateToken(AppUser user)
         {
-            var claims = new List<Claim>()
+            var claims = new List<Claim>
             {
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.GivenName, user.DisplayName)
             };
 
-            var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
+            var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

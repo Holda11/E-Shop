@@ -22,10 +22,10 @@ namespace Infrastructure.Identity.Migrations
                     {
                         FirstName = "Bob",
                         LastName = "Bobbity",
-                        Street = "10 the Street",
+                        Street = "10 The street",
                         City = "New York",
                         State = "NY",
-                        ZipCode = "90210",
+                        Zipcode = "90210"
                     }
                 };
 
