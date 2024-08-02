@@ -1,4 +1,4 @@
-import * as cuid from 'cuid'
+import * as cuid from 'cuid';
 
 export interface Basket {
     id: string
