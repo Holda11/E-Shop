@@ -2,7 +2,8 @@
 *ngIf="totalCount && pageSize" 
 [boundaryLinks]="true" 
 [totalItems]="totalCount" 
-[itemsPerPage]="pageSize" 
+[itemsPerPage]="pageSize"
+[ngModel]="pageNumber" 
 [maxSize]="10" 
 (pageChanged)="onPagerChanged($event)"
     previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
